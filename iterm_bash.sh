@@ -43,11 +43,7 @@ function iterm2_fg_color() {
 
 # Ditto for tab color
 function iterm2_tab_color() {
-  r=$1
-  g=$2
-  b=$3
-
-  printf "\e]6;1;bg;red;brightness;${r}\a"
-  printf "\e]6;1;bg;green;brightness;${g}\a"
-  printf "\e]6;1;bg;blue;brightness;${b}\a"
+  printf "\e]6;1;bg;red;brightness;$1\a"
+  printf "\e]6;1;bg;green;brightness;$2\a"
+  printf "\e]6;1;bg;blue;brightness;$3\a"
 }
