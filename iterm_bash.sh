@@ -43,28 +43,9 @@ function iterm2_fg_color() {
 
 # Ditto for tab color
 function iterm2_tab_color() {
-  local rgb=$1
-  local size=${#rgb}
-  local rhex ghex bhex
-  echo "Size is $size"
-  if [ "$size" == "6" ]; then
-    rhex=${rgb:0:2}
-    ghex=${rgb:2:2}
-    bhex=${rgb:4:2}
-  else
-    rhex=${rgb:0:1}
-    rhex="${rhex}${rhex}"
-    ghex=${rgb:1:1}
-    ghex="$ghex$ghex"
-    bhex=${rgb:2:1}
-    bhex="$bhex$bhex"
-    echo "B is ${bhex}"
-  fi
-
-  r=$(printf "%d" 0x${rhex})
-  g=$(printf "%d" 0x${ghex})
-  b=$(printf "%d" 0x${bhex})
-
+  r=$1
+  g=$2
+  b=$3
 
   printf "\e]6;1;bg;red;brightness;${r}\a"
   printf "\e]6;1;bg;green;brightness;${g}\a"
