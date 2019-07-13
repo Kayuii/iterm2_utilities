@@ -17,7 +17,7 @@ tab-color() {
 }
 tab-reset() {
     echo -ne "\033]6;1;bg;*;default\a"
-    iterm2_set_badge "\(session.hostname)"
+    iterm2_set_badge "\(session.username) \n @\(session.hostname)"
 }
 
 # Change the color of the tab when using SSH
